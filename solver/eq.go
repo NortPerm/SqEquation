@@ -5,8 +5,10 @@ import (
 	"math"
 )
 
-var errInvalidFirstCoeff = errors.New("a must not be zero")
-var errNotNumberCoeff = errors.New("at least one coefficient is not a number")
+var (
+	errInvalidFirstCoeff = errors.New("a must not be zero")
+	errNotNumberCoeff    = errors.New("at least one coefficient is not a number")
+)
 
 const eps float64 = 1e-10
 
@@ -53,4 +55,8 @@ func isNumberList(list ...float64) bool {
 		}
 	}
 	return true
+}
+
+func IsNumberList(list ...float64) bool {
+	return isNumberList(list...)
 }
