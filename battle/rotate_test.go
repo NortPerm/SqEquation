@@ -8,7 +8,6 @@ import (
 )
 
 func TestRotateCommand_Execute(t *testing.T) {
-
 	tests := []struct {
 		name        string
 		r           Rotable
@@ -25,7 +24,7 @@ func TestRotateCommand_Execute(t *testing.T) {
 		{
 			name:        "can not read direction",
 			r:           NewMockRotable(21, 24, 10, canReadAngularVelocity|canWritePosition),
-			want:        0, //чтение невозможно вернется зироВэлью
+			want:        0, // чтение невозможно вернется зироВэлью
 			wantErr:     true,
 			expectedErr: ErrInvalidDirection,
 		},

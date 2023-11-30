@@ -9,7 +9,6 @@ import (
 )
 
 func TestMoveCommand_Execute(t *testing.T) {
-
 	tests := []struct {
 		name        string
 		m           Movable
@@ -26,7 +25,7 @@ func TestMoveCommand_Execute(t *testing.T) {
 		{
 			name:        "can not read position",
 			m:           NewMockMovable(12, 5, -7, 3, canReadVelocity|canWritePosition),
-			want:        nil, //чтение невозможно
+			want:        nil, // чтение невозможно
 			wantErr:     true,
 			expectedErr: ErrInvalidPosition,
 		},

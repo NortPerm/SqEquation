@@ -29,12 +29,14 @@ func (m *mockMovable) GetPosition() (*Vector, error) {
 	}
 	return nil, ErrInvalidPosition
 }
+
 func (m *mockMovable) GetVelocity() (*Vector, error) {
 	if m.velocity.correct() && m.canReadVelocity {
 		return m.velocity, nil
 	}
 	return nil, ErrInvalidVelocity
 }
+
 func (m *mockMovable) SetPosition(position *Vector) error {
 	if position.correct() && m.canWritePosition {
 		m.position = position

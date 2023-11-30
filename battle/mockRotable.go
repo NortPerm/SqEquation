@@ -30,18 +30,21 @@ func (r *mockRotable) GetDirection() (int, error) {
 	}
 	return 0, ErrInvalidDirection
 }
+
 func (r *mockRotable) GetDirectionsNumber() (int, error) {
 	if r.directionsNumber > 0 {
 		return r.directionsNumber, nil
 	}
 	return 0, ErrInvalidDirectionsCount
 }
+
 func (r *mockRotable) GetAngularVelocity() (int, error) {
 	if r.canReadAngularVelocity {
 		return r.velocity, nil
 	}
 	return 0, ErrInvalidAngularVelocity
 }
+
 func (r *mockRotable) SetDirection(direction int) error {
 	if r.canWriteDirection {
 		r.direction = direction

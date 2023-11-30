@@ -58,7 +58,6 @@ func (ma *MovableAdapter) GetVelocity() (*Vector, error) {
 		float64(velocity)*math.Cos(angle),
 		float64(velocity)*math.Sin(angle),
 	), nil
-
 }
 
 func (ma *MovableAdapter) SetPosition(position *Vector) error {
